@@ -8,8 +8,8 @@
 <body>
     <div height="100px">
         <button style="width: 60px; height: 35px;" onclick="weaponToggle()">Attack</button>
-    </div id="attackDiv">
-    <div style="top: 100px; height: 100px; display: none;">
+    </div>
+    <div style="top: 100px; height: 100px; display: none; position: relative;" id="attackDiv">
         <button style="width: 60px; height: 35px;"onclick="swordAttack()">⚔</button>
     </div>
     <p id="healthDisplay">enemyHealth = 100</p>
@@ -24,8 +24,9 @@ weaponPick.style.display ='block';
         function swordAttack(){
             enemyHealth -= 20;
             weaponPick.style.display = 'none';
+            Display.textContent = `enemyHealth = $(enemyHealth)`
         }
         
     </script>
 </body>
-</html>
+</html>                                                                 
