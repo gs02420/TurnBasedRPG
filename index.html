@@ -9,9 +9,10 @@
     <div height="100px">
         <button style="width: 60px; height: 35px;" onclick="weaponToggle()">Attack</button>
     </div>
-    <div style="top: 100px; height: 100px; display: none; position: relative;" id="attackDiv">
+    <div style="bottom: 100px; height: 100px; display: none; position: relative;" id="attackDiv">
         <button style="width: 60px; height: 35px;"onclick="swordAttack()">⚔</button>
     </div>
+    <canvas style="height: 100; width: fit-content; display: block;" id="fightCanvas"></canvas>
     <p id="healthDisplay">enemyHealth = 100</p>
     <script>
         let enemyHealth = 100;
