@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurnBasedRPG</title>
+</head>
+<body>
+    <div height="100px">
+        <button style="width: 60px; height: 35px;" onclick="weaponToggle">Attack</button>
+    </div id="attackDiv">
+    <div style="top: 100px; height: 100px; display: none;">
+        <button style="width: 60px; height: 35px;"onclick="swordAttack">⚔</button>
+    </div>
+    <p id="healthDisplay">enemyHealth = 100</p>
+    <script>
+        let enemyHealth = 100;
+        let Display = document.getElementById('healthDisplay')
+        let weaponPick = document.getElementById('attackDiv')
+
+        function weaponToggle(){
+weaponPick.style.display ='none';
+        }
+        function swordAttack(){
+            enemyHealth -= 20;
+            weaponPick.style.display = 'none';
+        }
+        
+    </script>
+</body>
+</html>
