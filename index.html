@@ -14,17 +14,18 @@
         <button style="width: 60px; height: 35px;"onclick="swordAttack()">⚔</button>
     </div>
     <div style="top: -100px; height: 100px; display: none; position: relative;" id="otherDiv">
-
+<button>hi</button>
     </div>
     <canvas style="height: 100; width: device-width; display: block;" id="fightCanvas"></canvas>
     <p id="healthDisplay">enemyHealth = 100</p>
     <script>
         let enemyHealth = 100;
-        let Display = document.getElementById('healthDisplay')
-        let weaponPick = document.getElementById('attackDiv')
+        let Display = document.getElementById('healthDisplay');
+        let weaponPick = document.getElementById('attackDiv');
+        let otherPick = document.getElementById('otherDiv');
 
         function otherToggle(){
-
+otherPick.style.display = 'block';
         }
         function weaponToggle(){
 weaponPick.style.display ='block';
