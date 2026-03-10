@@ -8,17 +8,24 @@
 <body>
     <div height="100px">
         <button style="width: 60px; height: 35px;" onclick="weaponToggle()">Attack</button>
+        <button style="width: 60px; height: 35px;" onclick="otherToggle()">Other</button>
     </div>
-    <div style="bottom: 100px; height: 100px; display: none; position: relative;" id="attackDiv">
+    <div style="top: -100px; height: 100px; display: none; position: relative;" id="attackDiv">
         <button style="width: 60px; height: 35px;"onclick="swordAttack()">⚔</button>
     </div>
-    <canvas style="height: 100; width: fit-content; display: block;" id="fightCanvas"></canvas>
+    <div style="top: -100px; height: 100px; display: none; position: relative;" id="otherDiv">
+
+    </div>
+    <canvas style="height: 100; width: device-width; display: block;" id="fightCanvas"></canvas>
     <p id="healthDisplay">enemyHealth = 100</p>
     <script>
         let enemyHealth = 100;
         let Display = document.getElementById('healthDisplay')
         let weaponPick = document.getElementById('attackDiv')
 
+        function otherToggle(){
+
+        }
         function weaponToggle(){
 weaponPick.style.display ='block';
         }
