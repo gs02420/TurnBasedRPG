@@ -42,11 +42,11 @@
     <p id="playerHealthDisplay">playerHealth = 100</p>
     <p id="playerEnergyDisplay">playerEnergy = 10</p>
     <script>
-        let enemyHealth = 100;
+        let enemyHealth = 80;
         let enemyDamage = 20;
         let playerHealth = 100;
         const baseEnemyDamage = 20;
-        let playerEnergy = 10;
+        let playerEnergy = 6;
         let turnsElapsed = 0;
         let Display = document.getElementById('healthDisplay');
         let hpDisplay = document.getElementById('playerHealthDisplay');
@@ -69,6 +69,7 @@ function toggleMenu(menuId){
         }
         function defendToggle(){
 enemyDamage = baseEnemyDamage / 2;
+playerEnergy + 4;
 document.getElementById('otherDiv').style.display = 'none';
 enemyTurn();
 turnsElapsed += 1;
