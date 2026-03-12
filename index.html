@@ -37,7 +37,7 @@
     <div class="action-menu" id="otherDiv">
 <button onclick="defendToggle()">Defend</button>
     </div>
-    <canvas style="height: 100; width: device-width; display: block; color: rgb(67, 67, 163);" id="fightCanvas"></canvas>
+    <canvas style="height: 100; width: device-width; display: block; background-color: rgb(67, 67, 163);" id="fightCanvas"></canvas>
     <p id="healthDisplay">enemyHealth = 100</p>
     <p id="playerHealthDisplay">playerHealth = 100</p>
     <p id="playerEnergyDisplay">playerEnergy = 10</p>
@@ -47,6 +47,7 @@
         let playerHealth = 100;
         const baseEnemyDamage = 20;
         let playerEnergy = 10;
+        let turnsElapsed = 0;
         let Display = document.getElementById('healthDisplay');
         let hpDisplay = document.getElementById('playerHealthDisplay');
         let nrgDisplay = document.getElementById('playerEnergyDisplay');        
@@ -67,8 +68,14 @@ function toggleMenu(menuId){
             changeDisplay();
         }
         function defendToggle(){
-enemyDamage /= 2;
+enemyDamage = baseEnemyDamage / 2;
+document.getElementById('otherDiv').style.display = 'none';
 enemyTurn();
+turnsElapsed += 1;
+if (turnsElapsed >= 2){
+enemyDamage = baseEnemyDamage;
+turnsElapsed = 0;
+}
 changeDisplay();
         }
         function enemyTurn(){
