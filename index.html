@@ -28,8 +28,8 @@
 </head>
 <body>
     <div class="menu-container">
-        <button style="width: 60px; height: 35px;" onclick="toggleMenu(attackDiv)">Attack</button>
-        <button style="width: 60px; height: 35px;" onclick="toggleMenu(otherDiv)">Other</button>
+        <button style="width: 60px; height: 35px;" onclick="toggleMenu('attackDiv')">Attack</button>
+        <button style="width: 60px; height: 35px;" onclick="toggleMenu('otherDiv')">Other</button>
     </div>
     <div class="action-menu" id="attackDiv">
         <button style="width: 60px; height: 35px;"onclick="swordAttack()">⚔</button>
@@ -61,22 +61,23 @@ function toggleMenu(menuId){
 }
         function swordAttack(){
             enemyHealth -= 20;
+            playerEnergy -= 2;
             document.getElementById('attackDiv').style.display = 'none';
-            Display.textContent = `enemyHealth = ${enemyHealth}`
+            enemyTurn();
+            changeDisplay();
         }
-                function swordAttack(){
-            enemyHealth -= 20;
-            document.getElementById('attackDiv').style.display = 'none';
+        function defendToggle(){
+enemyDamage /= 2;
+enemyTurn();
+changeDisplay();
+        }
+        function enemyTurn(){
+            playerHealth = playerHealth - enemyDamage;
+        }
+        function changeDisplay(){
             Display.textContent = `enemyHealth = ${enemyHealth}`
             hpDisplay.textContent = `playerHealth = ${playerHealth}`
             nrgDisplay.textContent = `playerEnergy = ${playerEnergy}`
-        }
-        function defendToggle(){
-enemyDamage / 2;
-playerHealth - enemyDamage;
-Display.textContent = `enemyHealth = ${enemyHealth}`
-hpDisplay.textContent = `playerHealth = ${playerHealth}`
-nrgDisplay.textContent = `playerEnergy = ${playerEnergy}`
         }
         
     </script>
