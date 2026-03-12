@@ -61,8 +61,10 @@ function toggleMenu(menuId){
     document.getElementById(menuId).style.display = 'block';
 }
         function swordAttack(){
+            if (playerEnergy > 0){
             enemyHealth -= 20;
             playerEnergy -= 2;
+            }
             document.getElementById('attackDiv').style.display = 'none';
             enemyTurn();
             changeDisplay();
